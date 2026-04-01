@@ -172,7 +172,7 @@ export const categoryBreakdownData = [
 export const mockUsers = {
   admin: {
     id: 1,
-    name: 'Vikas Kumar',
+    name: 'Vikas Yadav',
     email: 'vikas@fintech.com',
     role: 'admin',
     balance: 50000,
@@ -180,8 +180,8 @@ export const mockUsers = {
   },
   viewer: {
     id: 2,
-    name: 'Priya Sharma',
-    email: 'priya@fintech.com',
+    name: 'Suhani Singh',
+    email: 'suhani@fintech.com',
     role: 'viewer',
     balance: 50000,
     avatar: '👩‍💻',
