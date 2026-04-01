@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for dark theme */
+* {
+  @apply antialiased transition-colors duration-200;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100 font-sans min-h-screen;
+  background-attachment: fixed;
+  color: #e2e8f0;
+}
+
+/* Typography */
+@layer components {
+  .text-heading-lg {
+    @apply text-4xl font-bold tracking-tight text-slate-50;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-heading-md {
+    @apply text-2xl font-bold text-slate-50;
+    letter-spacing: -0.01em;
+  }
+  
+  .text-heading-sm {
+    @apply text-lg font-semibold text-slate-50;
+  }
+
+  .text-label {
+    @apply text-sm font-medium text-slate-300;
+  }
+
+  .text-hint {
+    @apply text-xs text-slate-400 font-medium;
+  }
+
+  .text-body {
+    @apply text-base text-slate-200 leading-relaxed;
+  }
+}
+
+/* Transitions & Effects */
+@layer components {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .hover-lift {
+    @apply hover:shadow-elegant hover:-translate-y-1 active:scale-95 transition-smooth cursor-pointer;
+  }
+
+  .hover-glow {
+    @apply hover:shadow-lg transition-smooth;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply hover:shadow-lg hover:border-brand-500 transition-smooth;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-400 to-brand-300 bg-clip-text text-transparent;
+  }
+}
+
+/* Animations */
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-brand-500 text-slate-900;
+}
+
+/* Placeholder styling */
+::placeholder {
+  @apply text-slate-500 font-medium;
+}
+
+/* Input focus state */
+input:focus,
+select:focus,
+textarea:focus {
+  @apply ring-2 ring-brand-500 ring-offset-2 ring-offset-slate-900 border-brand-400;
+}
+
+/* Gradient backgrounds for dark mode */
+@layer components {
+  .bg-gradient-brand {
+    @apply bg-gradient-to-br from-brand-600 via-brand-500 to-brand-700;
+  }
+
+  .bg-gradient-success {
+    @apply bg-gradient-to-br from-success-600 to-success-500;
+  }
+
+  .bg-gradient-danger {
+    @apply bg-gradient-to-br from-danger-600 to-danger-500;
+  }
+
+  .bg-subtle-gradient {
+    @apply bg-gradient-to-br from-slate-800 to-slate-700;
+  }
+}
+
+/* Subtle borders for dark mode */
+@layer components {
+  .border-subtle {
+    @apply border border-slate-700;
+  }
+
+  .border-light {
+    @apply border border-slate-700;
+  }
+
+  .divide-subtle {
+    @apply divide-slate-700;
+  }
+}
+
+/* Status indicators */
+@layer components {
+  .status-pulse {
+    position: relative;
+  }
+
+  .status-pulse::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    animation: pulseSubtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+
+  .status-dot-active {
+    @apply bg-success-500 animate-pulse-subtle;
+  }
+
+  .status-dot-pending {
+    @apply bg-warning-500 animate-pulse-subtle;
+  }
+
+  .status-dot-inactive {
+    @apply bg-slate-500;
+  }
+}
+
+/* Backdrop blur */
+@layer components {
+  .backdrop-blur-xl {
+    backdrop-filter: blur(20px);
+  }
+}
