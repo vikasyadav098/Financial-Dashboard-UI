@@ -11,7 +11,7 @@ import InsightsSection from './components/charts/InsightsSection'
  * Why use useState for section routing instead of React Router?
  * - This is a single-page dashboard, not a multi-page app
  * - useState is simpler, fewer dependencies
- * - Easy to migrate to Router if needed later
+ * - Easy to migrate to Router if you needed later
  */
 export default function App() {
   const [activeSection, setActiveSection] = useState('overview')
